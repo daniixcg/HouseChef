@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/inici.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="inici-container">
+        <div class="inici-card">
+            <div class="inici-logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo HouseChef">
+            </div>
+            <h1>Inici de Sessió</h1>
+            <p class="inici-subtitle">Benvingut a HouseChef</p>
+            
+            <form method="POST" class="inici-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="email">Correu Electrònic</label>
+                    <input type="email" id="email" name="email" required placeholder="Introduïx el teu correu">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contrasenya</label>
+                    <input type="password" id="password" name="password" required placeholder="Introduïx la teva contrasenya">
+                </div>
+
+                <button type="submit" class="btn-inici">Iniciar Sessió</button>
+            </form>
+
+            <div class="inici-footer">
+                <p>No tens compte? <a href="{% url 'registre:registre' %}">Registra't aquí</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

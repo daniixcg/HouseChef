@@ -1,0 +1,42 @@
+{% load static %}
+<footer>
+    <hr>
+    <div class="footer-content">
+        <!-- Columna Izquierda: Redes Sociales -->
+        <div class="footer-column">
+            <h4>Segueix-nos a:</h4>
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img class="social-icon" src="{% static 'img/instagram.png' %}" alt="Instagram">
+                </a>
+                <a href="https://www.tiktok.com" target="_blank">
+                    <img class="social-icon" src="{% static 'img/tik-tok.png' %}" alt="TikTok">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img class="social-icon" src="{% static 'img/facebook.png' %}" alt="Facebook">
+                </a>
+            </div>
+        </div>
+
+        <!-- Columna Centro: Políticas -->
+        <div class="footer-column">
+            <h4>Informació</h4>
+            <p>
+                <a href="{% url 'home:cookies' %}">Política de cookies</a>
+            </p>
+            <p>
+                <a href="{% url 'home:privacitat' %}">Privacitat de dades</a>
+            </p>
+        </div>
+
+        <!-- Columna Derecha: Métodos de Pago -->
+        <div class="footer-column">
+            <h4>Acceptem:</h4>
+            <div class="payment-icons">
+                <img class="payment-icon" src="{% static 'img/paypal.png' %}" alt="PayPal">
+                <img class="payment-icon" src="{% static 'img/visa.png' %}" alt="Visa">
+                <img class="payment-icon" src="{% static 'img/mastercard.png' %}" alt="Mastercard">
+            </div>
+        </div>
+    </div>
+</footer>

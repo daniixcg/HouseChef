@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/privacitat.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="policy-container">
+        <div class="policy-content">
+            <h1>Política de Privacitat</h1>
+            <p class="last-updated">Última actualització: 30 de gener de 2026</p>
+
+            <section>
+                <h2>1. Introducció</h2>
+                <p>
+                    A HouseChef, la teva privacitat és important per a nosaltres. 
+                    Aquesta política explica com recollim, utilitzem i protegim les teves dades personals.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. Informació que recollim</h2>
+                <h3>2.1 Informació que us proporcioneu</h3>
+                <p>
+                    Quan te registres, compartillaes el teu nom, correu electrònic i contrasenya. 
+                    També pots proporcionar informació adicional al teu perfil, com foto, biografia i preferències culinàries.
+                </p>
+                
+                <h3>2.2 Informació recollida automàticament</h3>
+                <p>
+                    Recopilamos informació sobre com interactuuas amb la plataforma, 
+                    inclou les pàgines que visites, el temps que dediques i les funcions que utilitzes.
+                </p>
+                
+                <h3>2.3 Informació de tercers</h3>
+                <p>
+                    Si us connectaus a través de xarxes socials, recullim la informació que permitis compartir.
+                </p>
+            </section>
+
+            <section>
+                <h2>3. Com utilitzem la teva informació</h2>
+                <ul>
+                    <li>Per proporcionar i millorar els nostres serveis</li>
+                    <li>Per personalitzar la teva experiència</li>
+                    <li>Per comunicar-nos contigo sobre actualizacions i notícies</li>
+                    <li>Per garantir la seguretat de la plataforma</li>
+                    <li>Per complir amb les obligacions legals</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Protecció de dades</h2>
+                <p>
+                    Utilizamos encriptació moderna (SSL/TLS) per protegir la teva informació durant la transmissió. 
+                    Les contrasenyes es guarden de forma segura utilitzant hashing.
+                </p>
+            </section>
+
+            <section>
+                <h2>5. Compartir informació</h2>
+                <p>
+                    No compartim les teves dades personals amb tercers sense la teva consentiment, 
+                    excepte quan és necessari per proporcionar els nostres serveis o complir amb la llei.
+                </p>
+            </section>
+
+            <section>
+                <h2>6. Drets dels usuaris</h2>
+                <p>
+                    Tens dret a:
+                </p>
+                <ul>
+                    <li>Accedir a les teves dades personals</li>
+                    <li>Corregir la informació inexacta</li>
+                    <li>Eliminar la teva informació (dret a l'oblit)</li>
+                    <li>Oposar-te al tractament de les teves dades</li>
+                    <li>Retirar el teu consentiment en qualsevol moment</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7. Conservació de dades</h2>
+                <p>
+                    Conservem les teves dades personals mentre mantingues la teva compte activa. 
+                    Si donas de baixa, les teves dades s'eliminaran dins de 30 dies, 
+                    excepte quan la llei exigeixi la conservació més llarga.
+                </p>
+            </section>
+
+            <section>
+                <h2>8. Contacte</h2>
+                <p>
+                    Si tens preguntes sobre la nostra política de privacitat o vols exercir els teus drets, 
+                    <a href="{% url 'peticions:peticions' %}">envia'ns una petició</a>.
+                </p>
+            </section>
+
+            <section>
+                <h2>9. Canvis en aquesta política</h2>
+                <p>
+                    Ens reservem el dret de actualitzar aquesta política en qualsevol moment. 
+                    Te notificarem dels canvis significatius per correu electrònic.
+                </p>
+            </section>
+        </div>
+    </div>
+{% endblock %}

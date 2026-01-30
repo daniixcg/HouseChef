@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/registre.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="registre-container">
+        <div class="registre-card">
+            <div class="registre-logo">
+                <img src="{% static 'img/logo.png' %}" alt="Logo HouseChef">
+            </div>
+            <h1>Crear Compte</h1>
+            <p class="registre-subtitle">Uneix-te a la comunitat HouseChef</p>
+            
+            <form method="POST" class="registre-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="nombre">Nom Complet</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Introduïx el teu nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correu Electrònic</label>
+                    <input type="email" id="email" name="email" required placeholder="Introduïx el teu correu">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contrasenya</label>
+                    <input type="password" id="password" name="password" required placeholder="Introduïx una contrasenya segura">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_confirm">Confirmar Contrasenya</label>
+                    <input type="password" id="password_confirm" name="password_confirm" required placeholder="Confirma la contrasenya">
+                </div>
+
+                <button type="submit" class="btn_confrm">Crear Compte</button>
+            </form>
+
+            <div class="registre-footer">
+                <p>Ja tens compte? <a href="{% url 'registre:inici' %}">Inicia sessió aquí</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

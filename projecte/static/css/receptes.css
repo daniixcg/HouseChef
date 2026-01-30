@@ -1,0 +1,124 @@
+/* Receptes Page Styles */
+
+.receptes-container {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.receptes-title {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.receptes-subtitle {
+    color: #7f8c8d;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 50px;
+}
+
+.receptes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.recepta-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recepta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.recepta-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.recepta-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.recepta-card:hover .recepta-image img {
+    transform: scale(1.05);
+}
+
+.recepta-content {
+    padding: 25px;
+}
+
+.recepta-content h2 {
+    color: #e67e22;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 10px;
+}
+
+.recepta-content h3 {
+    color: #2c3e50;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.ingredients-list,
+.steps-list {
+    margin-left: 20px;
+    color: #34495e;
+    line-height: 1.8;
+}
+
+.ingredients-list li {
+    list-style-type: disc;
+    margin-bottom: 8px;
+}
+
+.steps-list li {
+    list-style-type: decimal;
+    margin-bottom: 10px;
+}
+
+.ingredients-list li,
+.steps-list li {
+    font-size: 0.95em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .receptes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .receptes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .receptes-title {
+        font-size: 2em;
+    }
+
+    .recepta-content {
+        padding: 15px;
+    }
+
+    .recepta-content h2 {
+        font-size: 1.3em;
+    }
+}

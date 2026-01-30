@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/peticions.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="peticions-container">
+        <div class="peticions-card">
+            <h1>Peticions i Sugerències</h1>
+            <p class="peticions-subtitle">Comparteix les teves idees amb nosaltres</p>
+            
+            <form method="POST" class="peticions-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="nom">Nom Complet</label>
+                    <input type="text" id="nom" name="nom" required placeholder="Introduïx el teu nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correu Electrònic</label>
+                    <input type="email" id="email" name="email" required placeholder="Introduïx el teu correu">
+                </div>
+
+                <div class="form-group">
+                    <label for="assumpte">Assumpte</label>
+                    <input type="text" id="assumpte" name="assumpte" required placeholder="Breu descripció de l'assumpte">
+                </div>
+
+                <div class="form-group">
+                    <label for="tipus">Tipus de Petició</label>
+                    <select id="tipus" name="tipus" required>
+                        <option value="">Selecciona una opció</option>
+                        <option value="sugerencia">Sugerència</option>
+                        <option value="peticio">Petició</option>
+                        <option value="problema">Problema</option>
+                        <option value="altra">Altra</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="missatge">Missatge</label>
+                    <textarea id="missatge" name="missatge" rows="6" required placeholder="Escriu el teu missatge aquí..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Petició</button>
+            </form>
+
+            <div class="peticions-footer">
+                <p>Gràcies per ajudar-nos a millorar HouseChef!</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

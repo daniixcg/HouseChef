@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="home-section">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="{% static 'img/logo.png' %}" alt="Logo HouseChef">
+        </div>
+
+        <!-- Nom de la pàgina -->
+        <h1 class="page-title">HouseChef</h1>
+        <p class="page-subtitle">La cuina com a estil de vida</p>
+
+        <!-- Foto de cuina -->
+        <div class="kitchen-image-container">
+            <img src="{% static 'img/fotohome.png' %}" alt="Foto de cuina">
+        </div>
+
+        <!-- Text sobre la fundació i missió -->
+        <div class="about-section">
+            <h2>Qui som?</h2>
+            
+            <p>
+                <span class="section-label">HouseChef</span> va néixer amb la passió per compartir la magia de la cuina casolana. Fa uns anys, 
+                un grup d'amants de la gastronomia vam decidir crear un espai on la cuina deixa de ser només una necessitat 
+                per convertir-se en una experiència.
+            </p>
+
+            <p>
+                <span class="section-label">La nostra missió:</span> Fomentar l'apreciació per la cuina artesanal, el bon menjar fet a casa amb 
+                ingredients de qualitat, i crear una comunitat on compartir receptes, tècniques i històries culinàries.
+            </p>
+
+            <p>
+                <span class="section-label">On estem:</span> Encara que som una comunitat virtual, tenim el cor al cor de Barcelona, una ciutat 
+                amb una riquíssima tradició culinària que ens inspira cada dia.
+            </p>
+
+            <p>
+                <span class="section-label">Les nostres aficions:</span> Experimentar amb ingredients locals, descobrir nous sabors, preservar 
+                receptes tradicionals, i fer que cada plat sigui una festa per als sentits. Creiem que cuinar és una forma 
+                d'amor, i cada recepta és una história per contar.
+            </p>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/receptes.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="receptes-container">
+        <h1 class="receptes-title">Les Nostres Receptes</h1>
+        <p class="receptes-subtitle">Descobreix delicioses receptes de la cuina casolana</p>
+
+        <div class="receptes-grid">
+            {% for receta in recetas %}
+            <!-- Receta: {{ receta.nombre }} -->
+            <div class="recepta-card">
+                <div class="recepta-image">
+                    <img src="{% static 'img/' %}{{ receta.imagen }}" alt="{{ receta.nombre }}">
+                </div>
+                <div class="recepta-content">
+                    <h2>{{ receta.nombre }}</h2>
+                    
+                    <h3>Ingredients</h3>
+                    <ul class="ingredients-list">
+                        {% for ingrediente in receta.ingredientes %}
+                        <li>{{ ingrediente }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <h3>Pasos</h3>
+                    <ol class="steps-list">
+                        {% for paso in receta.pasos %}
+                        <li>{{ paso }}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
