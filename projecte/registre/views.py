@@ -3,5 +3,5 @@ from django.shortcuts import render
 def registre(request):
     return render(request, 'registre.html')
 
-def inici(request):
+def inici_sessio(request):
     return render(request, 'inici.html')

@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# Inclou les 5 apps personalitzades: home, registre, peticions, faqs, receptes
 
 INSTALLED_APPS = [
     'django.contrib.admin',

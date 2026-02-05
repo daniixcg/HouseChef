@@ -11,26 +11,27 @@
         <p class="receptes-subtitle">Descobreix delicioses receptes de la cuina casolana</p>
 
         <div class="receptes-grid">
-            {% for receta in recetas %}
-            <!-- Receta: {{ receta.nombre }} -->
+            {# Bucle que renderitza dinàmicament cada recepta amb ingredients i passos des del views #}
+            {% for recepta in receptes %}
+            <!-- Recepta: {{ recepta.nom }} -->
             <div class="recepta-card">
                 <div class="recepta-image">
-                    <img src="{% static 'img/' %}{{ receta.imagen }}" alt="{{ receta.nombre }}">
+                    <img src="{% static 'img/' %}{{ recepta.imatge }}" alt="{{ recepta.nom }}">
                 </div>
                 <div class="recepta-content">
-                    <h2>{{ receta.nombre }}</h2>
+                    <h2>{{ recepta.nom }}</h2>
                     
                     <h3>Ingredients</h3>
                     <ul class="ingredients-list">
-                        {% for ingrediente in receta.ingredientes %}
-                        <li>{{ ingrediente }}</li>
+                        {% for ingredient in recepta.ingredients %}
+                        <li>{{ ingredient }}</li>
                         {% endfor %}
                     </ul>
 
-                    <h3>Pasos</h3>
+                    <h3>Passos</h3>
                     <ol class="steps-list">
-                        {% for paso in receta.pasos %}
-                        <li>{{ paso }}</li>
+                        {% for pas in recepta.passos %}
+                        <li>{{ pas }}</li>
                         {% endfor %}
                     </ol>
                 </div>

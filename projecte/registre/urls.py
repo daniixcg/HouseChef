@@ -5,5 +5,5 @@ app_name = 'registre'
 
 urlpatterns = [
     path('', views.registre, name='registre'),
-    path('inici/',views.inici, name='inici'),
+    path('inici-sessio/', views.inici_sessio, name='inici_sessio'),
 ]

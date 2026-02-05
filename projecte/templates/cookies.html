@@ -8,80 +8,26 @@
 {% block content %}
     <div class="policy-container">
         <div class="policy-content">
-            <h1>Política de Cookies</h1>
-            <p class="last-updated">Última actualització: 30 de gener de 2026</p>
+            <h1>Política de Galetes</h1>
+            <p class="last-updated">Última actualització: 5 de febrer de 2026</p>
 
+            {# Bucle que renderitza dinàmicament cada secció de galetes. Suporta subseccions amb condicional #}
+            {% for seccio in seccions %}
             <section>
-                <h2>1. Introducció</h2>
-                <p>
-                    HouseChef utilitza cookies per millorar la teva experiència a la nostra plataforma. 
-                    Aquesta política explica com utilitzem les cookies i com pots controlar-les.
-                </p>
-            </section>
-
-            <section>
-                <h2>2. Què són les cookies?</h2>
-                <p>
-                    Les cookies són petits arxius de text que es desen al teu dispositiu quan visites un lloc web. 
-                    Ajuden a recordar informació sobre tu i les teves preferències.
-                </p>
-            </section>
-
-            <section>
-                <h2>3. Tipus de cookies que utilitzem</h2>
-                <h3>3.1 Cookies essencials</h3>
-                <p>
-                    Aquestes cookies són necessàries per al funcionament correcte de la plataforma. 
-                    Include les que gestionen la seguretat i la sessió de l'usuari.
-                </p>
+                <h2>{{ seccio.numero }}. {{ seccio.titol }}</h2>
                 
-                <h3>3.2 Cookies de preferència</h3>
-                <p>
-                    Recordem les teves preferències i opcions, com l'idioma o la configuració de visualització.
-                </p>
+                {% if seccio.text %}
+                <p>{{ seccio.text }}</p>
+                {% endif %}
                 
-                <h3>3.3 Cookies analítiques</h3>
-                <p>
-                    Ens ajuden a entendre com utilitzes la plataforma perquè puguem millorar-la.
-                </p>
-                
-                <h3>3.4 Cookies de màrqueting</h3>
-                <p>
-                    Utilitzades per mostrar-te contingut més rellevant i personalitzat.
-                </p>
+                {% if seccio.subseccions %}
+                    {% for subseccio in seccio.subseccions %}
+                    <h3>{{ subseccio.numero }} {{ subseccio.titol }}</h3>
+                    <p>{{ subseccio.text }}</p>
+                    {% endfor %}
+                {% endif %}
             </section>
-
-            <section>
-                <h2>4. Com controlar les cookies</h2>
-                <p>
-                    Pots controlar o eliminar les cookies a través de la configuració del teu navegador. 
-                    Si desactives les cookies essencials, és possible que alguns serveis no funcionin correctament.
-                </p>
-            </section>
-
-            <section>
-                <h2>5. Cookies de tercers</h2>
-                <p>
-                    Alguns serveis de tercers, com les xarxes socials, també poden establir cookies al teu dispositiu. 
-                    Consulta les seves polítiques de privacitat per més informació.
-                </p>
-            </section>
-
-            <section>
-                <h2>6. Durada de les cookies</h2>
-                <p>
-                    Les cookies de sessió s'eliminen quan tanques el navegador. 
-                    Les cookies persistents es guarden fins que les eliminis o expirem.
-                </p>
-            </section>
-
-            <section>
-                <h2>7. Contacte</h2>
-                <p>
-                    Si tens preguntes sobre la nostra política de cookies, 
-                    <a href="{% url 'peticions:peticions' %}">envia'ns una petició</a>.
-                </p>
-            </section>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

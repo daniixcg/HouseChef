@@ -1,11 +1,12 @@
 from django.shortcuts import render
 
 def receptes(request):
-    recetas = [
+    # Array de receptes que es passen al template per renderitzar dinàmicament
+    receptes_llista = [
         {
-            'nombre': 'Paella Valenciana',
-            'imagen': 'paella_valenciana.jpg',
-            'ingredientes': [
+            'nom': 'Paella Valenciana',
+            'imatge': 'paella_valenciana.jpg',
+            'ingredients': [
                 '350g d\'arròs',
                 '500g de conill',
                 '150g de mongetes verdes',
@@ -14,7 +15,7 @@ def receptes(request):
                 'Oli d\'oliva',
                 'Sal i pebre',
             ],
-            'pasos': [
+            'passos': [
                 'Talla el conill en trossos i sofregeix-lo en oli calent',
                 'Afegeix les mongetes verdes i deixa coure 5 minuts',
                 'Versa l\'arròs i remena\'s bé',
@@ -24,9 +25,9 @@ def receptes(request):
             ]
         },
         {
-            'nombre': 'Crema Catalana',
-            'imagen': 'crema_catalana.jpg',
-            'ingredientes': [
+            'nom': 'Crema Catalana',
+            'imatge': 'crema_catalana.jpg',
+            'ingredients': [
                 '500ml de llet',
                 '1 rajola de canella',
                 'Pell de llimona',
@@ -35,7 +36,7 @@ def receptes(request):
                 '50g de sucre',
                 'Sucre per gratinar',
             ],
-            'pasos': [
+            'passos': [
                 'Escalfa la llet amb la canella i la pell de llimona',
                 'Bat els rovells amb sucre fins que quedin pàl·lids',
                 'Afegeix la farina als rovells i remena bé',
@@ -46,9 +47,9 @@ def receptes(request):
             ]
         },
         {
-            'nombre': 'Fideuà',
-            'imagen': 'fideua.jpg',
-            'ingredientes': [
+            'nom': 'Fideuà',
+            'imatge': 'fideua.jpg',
+            'ingredients': [
                 '350g de fideus',
                 '400g de camarons',
                 '300g de peix blanc',
@@ -57,7 +58,7 @@ def receptes(request):
                 '4 dents d\'all',
                 'Oli d\'oliva i sal',
             ],
-            'pasos': [
+            'passos': [
                 'Sofregeix l\'all picado en la paellera amb oli',
                 'Afegeix el peix trencat en trossos i deixa coure 3 minuts',
                 'Versa els fideus i remena fins que estiguin dorats',
@@ -68,9 +69,9 @@ def receptes(request):
             ]
         },
         {
-            'nombre': 'Tiramisu',
-            'imagen': 'tiramisu.jpg',
-            'ingredientes': [
+            'nom': 'Tiramisu',
+            'imatge': 'tiramisu.jpg',
+            'ingredients': [
                 '500g de mascarpone',
                 '4 rovells d\'ou',
                 '100g de sucre',
@@ -79,7 +80,7 @@ def receptes(request):
                 'Cacao en pols',
                 'Licor de café (opcional)',
             ],
-            'pasos': [
+            'passos': [
                 'Bat els rovells amb sucre fins que quedin pàl·lids i esponjosos',
                 'Afegeix el mascarpone en porcions petites remenant amb suavitat',
                 'Barreja el cafè amb el licor de café si vols',
@@ -91,9 +92,9 @@ def receptes(request):
             ]
         },
         {
-            'nombre': 'Gazpacho Andalús',
-            'imagen': 'gazpacho.jpg',
-            'ingredientes': [
+            'nom': 'Gazpacho Andalús',
+            'imatge': 'gazpacho.jpg',
+            'ingredients': [
                 '1kg de tomàquets maduros',
                 '1 pimentó roig',
                 '1 cogombre',
@@ -102,7 +103,7 @@ def receptes(request):
                 '1 cullera de vinagre de xérès',
                 'Sal i aigua freda',
             ],
-            'pasos': [
+            'passos': [
                 'Talla els tomàquets, el pimentó i el cogombre en trossos',
                 'Remulla el pa en una mica d\'aigua',
                 'Posa tot en una trituradora o robot de cuina',
@@ -114,9 +115,9 @@ def receptes(request):
             ]
         },
         {
-            'nombre': 'Canelons de la Casa',
-            'imagen': 'canelons.jpg',
-            'ingredientes': [
+            'nom': 'Canelons de la Casa',
+            'imatge': 'canelons.jpg',
+            'ingredients': [
                 '24 plaques de canelons',
                 '500g de carn de porc picada',
                 '500g de carn de vedella picada',
@@ -125,7 +126,7 @@ def receptes(request):
                 'Formatge rellat',
                 'Sal, pebre i nous moscada',
             ],
-            'pasos': [
+            'passos': [
                 'Sofregeix la ceba picada en oli',
                 'Afegeix la carn picada i deixa coure fins que es dori',
                 'Prepara la beixamel i barreja amb la carn',
@@ -138,7 +139,8 @@ def receptes(request):
         },
     ]
     
+    # Passa les receptes al context per ser renderitzades al template
     context = {
-        'recetas': recetas
+        'receptes': receptes_llista
     }
     return render(request, 'receptes.html', context)

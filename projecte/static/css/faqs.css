@@ -40,7 +40,8 @@
     transition: all 0.3s ease;
 }
 
-.faq-item.active {
+/* Estil quan la pregunta està oberta (classe afegida pel JS) */
+.faq-item.actiu {
     border-color: #e67e22;
     box-shadow: 0 4px 12px rgba(231, 76, 60, 0.1);
 }
@@ -65,7 +66,7 @@
     background-color: #f0f1f3;
 }
 
-.faq-item.active .faq-question {
+.faq-item.actiu .faq-question {
     background-color: #fff5f3;
     color: #e67e22;
 }
@@ -81,10 +82,11 @@
     margin-left: 15px;
 }
 
-.faq-item.active .faq-icon {
+.faq-item.actiu .faq-icon {
     transform: rotate(180deg);
 }
 
+/* Animació de max-height per mostrar/amagar resposta (controlada pel JS) */
 .faq-answer {
     max-height: 0;
     overflow: hidden;

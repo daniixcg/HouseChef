@@ -12,112 +12,21 @@
             <p class="faqs-subtitle">Aquí trobaràs resposta a les preguntes més comunes</p>
 
             <div class="faqs-list">
-                <!-- Pregunta 1 -->
+                {# Bucle que genera dinàmicament cada pregunta amb la seva resposta des de l'array del views #}
+                {% for item in preguntes %}
                 <div class="faq-item">
-                    <button class="faq-question" onclick="toggleAnswer(this)">
-                        <span>Quant tarda en donar-se d'alta a HouseChef?</span>
+                    <button class="faq-question" onclick="mostraResposta(this)">
+                        <span>{{ item.pregunta }}</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>El procés de registre és molt simple i només tarda uns minuts. Necessites proporcionar el teu nom, correu electrònic i una contrasenya. Una vegada completat, tindràs accés immediat a tots els recursos de la comunitat HouseChef.</p>
+                        <p>{{ item.resposta }}</p>
                     </div>
                 </div>
-
-                <!-- Pregunta 2 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleAnswer(this)">
-                        <span>Quin és el cost de pertànyer a HouseChef?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>HouseChef és completament gratuït! No hi ha cap cost de membresia. Pots gaudir de totes les funcionalitats de la comunitat, compartir receptes, interactuar amb altres membres i accedir a continguts exclusius sense pagar res.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 3 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleAnswer(this)">
-                        <span>A on puc dirigir-me si tinc un dubte o problema?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Tens diverses opcions per contactar amb nosaltres. Pots enviar una petició a través de la secció de "Peticions i Sugerències", contactar-nos per correu electrònic o enviar un missatge privat als administradors. Sempre intentarem resoldre'n els teus dubtes el més aviat possible.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 4 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleAnswer(this)">
-                        <span>Puc donar-me de baixa en qualsevol moment?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sí, pots donar-te de baixa en qualsevol moment sense cap problema ni penalització. Simplement accedeix a la configuració del teu compte i selecciona l'opció de donar-te de baixa. Els teus dades es conservaran segons la nostra política de privacitat.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 5 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleAnswer(this)">
-                        <span>Puc compartir les meves receptes a HouseChef?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Per supuest! Un dels objectius principals de HouseChef és compartir receptes i experiències culinàries. Pots publicar les teves receptes, afegir fotos, descripcions detallades i tutorials. Anima't a compartir la teva passió per la cuina amb tota la comunitat.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 6 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleAnswer(this)">
-                        <span>Com puc recuperar la meva contrasenya?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Si has oblidat la contrasenya, accedeix a la pàgina d'inici de sessió i fes clic en "He oblidat la contrasenya". Et sent un enllaç de recuperació al teu correu electrònic. Fes clic en l'enllaç i crea una contrasenya nova.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 7 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleAnswer(this)">
-                        <span>La comunitat és segura i privada?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sí, la privacitat i seguretat dels nostres membres és prioritat. Utilitzem encriptació moderna per protegir les teves dades. Les teves dades personals mai es compartiran amb tercers sense el teu consentiment. Pots consultar la nostra política de privacitat per més detalls.</p>
-                    </div>
-                </div>
-
-                <!-- Pregunta 8 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleAnswer(this)">
-                        <span>Puc participar en concursos o activitats comunitàries?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Sí! HouseChef regularment organitza concursos de receptes, desafiaments culinaris i activitats comunitàries. Tots els membres registrats poden participar. Prest anunciarem els propers concursos a la pàgina d'inici. Mantingues't atent!</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 
-    <script>
-        function toggleAnswer(button) {
-            const faqItem = button.parentElement;
-            const answer = faqItem.querySelector('.faq-answer');
-            const icon = button.querySelector('.faq-icon');
-
-            faqItem.classList.toggle('active');
-
-            if (faqItem.classList.contains('active')) {
-                icon.textContent = '−';
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            } else {
-                icon.textContent = '+';
-                answer.style.maxHeight = '0';
-            }
-        }
-    </script>
+    <script src="{% static 'js/faqs.js' %}"></script>
 {% endblock %}
